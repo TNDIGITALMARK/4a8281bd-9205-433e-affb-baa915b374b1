@@ -1,59 +1,73 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* ============================================
+   LUXURY DETAILING DESIGN SYSTEM
+   Color Palette from Design Reference:
+   - Primary Navy: #2C3E50 (210 29% 24%)
+   - Secondary Navy: #34495E (210 22% 29%)
+   - Accent Blue: #3498DB (204 70% 53%)
+   - White: #FFFFFF (0 0% 100%)
+   - Light Gray: #ECF0F1 (192 15% 94%)
+   - Text Dark: #2C3E50 (210 29% 24%)
+   ============================================ */
 
 :root {
-  /* Pure white background with crisp black text */
+  /* Background: White for content, Navy for sections */
   --background: 0 0% 100%;
-  --foreground: 0 0% 0%;
+  --foreground: 210 29% 24%;
 
-  /* Clean white cards with black text */
+  /* Cards: Clean white with navy text */
   --card: 0 0% 100%;
-  --card-foreground: 0 0% 0%;
+  --card-foreground: 210 29% 24%;
 
-  /* Popovers with white background */
+  /* Popovers: White background */
   --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 0%;
+  --popover-foreground: 210 29% 24%;
 
-  /* Primary: Black with white text */
-  --primary: 0 0% 0%;
+  /* Primary: Accent Blue from reference (#3498DB) */
+  --primary: 204 70% 53%;
   --primary-foreground: 0 0% 100%;
 
-  /* Secondary: Light gray background with black text */
-  --secondary: 0 0% 97%;
-  --secondary-foreground: 0 0% 0%;
+  /* Secondary: Navy background (#2C3E50) */
+  --secondary: 210 29% 24%;
+  --secondary-foreground: 0 0% 100%;
 
-  /* Muted: Subtle gray with darker text */
-  --muted: 0 0% 96%;
-  --muted-foreground: 0 0% 40%;
+  /* Muted: Light gray (#ECF0F1) */
+  --muted: 192 15% 94%;
+  --muted-foreground: 210 29% 24%;
 
-  /* Accent: Light gray */
-  --accent: 0 0% 96%;
-  --accent-foreground: 0 0% 0%;
+  /* Accent: Accent Blue */
+  --accent: 204 70% 53%;
+  --accent-foreground: 0 0% 100%;
 
-  /* Destructive: Clean red */
+  /* Destructive: Red for errors */
   --destructive: 0 70% 50%;
   --destructive-foreground: 0 0% 100%;
 
   /* Borders: Subtle gray */
-  --border: 0 0% 90%;
-  --input: 0 0% 90%;
-  --ring: 0 0% 0%;
+  --border: 210 14% 89%;
+  --input: 210 14% 89%;
+  --ring: 204 70% 53%;
 
-  /* Minimal rounded corners */
-  --radius: 0.375rem;
+  /* Border radius: 4px from reference */
+  --radius: 0.25rem;
 
-  /* Sidebar: Clean white with black text */
+  /* Sidebar colors */
   --sidebar-background: 0 0% 100%;
-  --sidebar-foreground: 0 0% 0%;
-  --sidebar-primary: 0 0% 0%;
+  --sidebar-foreground: 210 29% 24%;
+  --sidebar-primary: 204 70% 53%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 0 0% 96%;
-  --sidebar-accent-foreground: 0 0% 0%;
-  --sidebar-border: 0 0% 90%;
-  --sidebar-ring: 0 0% 0%;
+  --sidebar-accent: 192 15% 94%;
+  --sidebar-accent-foreground: 210 29% 24%;
+  --sidebar-border: 210 14% 89%;
+  --sidebar-ring: 204 70% 53%;
+
+  /* Custom design tokens */
+  --navy-primary: 210 29% 24%;
+  --navy-secondary: 210 22% 29%;
+  --blue-accent: 204 70% 53%;
+  --gray-light: 192 15% 94%;
 }
 
 .dark {
@@ -169,24 +183,73 @@ All colors MUST be HSL.
 }
 
 body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
   font-feature-settings: "rlig" 1, "calt" 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
-/* Minimal, clean typography */
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
-  letter-spacing: -0.025em;
+/* Typography scale matching design reference */
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
   color: hsl(var(--foreground));
 }
 
-/* Clean button styles */
+h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+  color: hsl(var(--foreground));
+}
+
+h3 {
+  font-size: 1.875rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
+  color: hsl(var(--foreground));
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: hsl(var(--foreground));
+}
+
+h5 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: hsl(var(--foreground));
+}
+
+h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: hsl(var(--foreground));
+}
+
+p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+/* Button styles matching reference */
 button {
-  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
 }
 
 /* Subtle shadows for depth */
